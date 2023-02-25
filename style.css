@@ -1,0 +1,48 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #242424;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    max-width: 1300px;
+}
+
+#content {
+    background-color: #ffae00;
+
+    width: 600px;
+    height: 800px;
+
+    border-radius: 40px;
+
+    padding: 40px 80px;
+
+    text-align: center;
+}
+
+#content #temperature {
+    display: block;
+    margin-top: 40%;
+
+    font-size: 7em;
+}
+
+#content #feels-like {
+    font-size: 2em;
+}
