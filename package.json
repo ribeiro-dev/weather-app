@@ -4,7 +4,8 @@
   "description": "an application that shows the weather based on your location",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.js"
+    "test": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "weather",
