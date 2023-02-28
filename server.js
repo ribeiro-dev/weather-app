@@ -3,7 +3,6 @@ const app = express()
 const bodyParser = require("body-parser")
 require("dotenv").config()
 
-app.set("view engine", "ejs")
 app.use(express.static('public'))
 
 
@@ -14,7 +13,7 @@ app.use(bodyParser.json())
 
 // Rotas
 app.get("/", (req, res) => {
-    res.render('index')
+    res.sendFile('index.html')
 })
 
 app.post("/location", async (req, res) => {
@@ -23,7 +22,6 @@ app.post("/location", async (req, res) => {
     let result
 
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${postData.latitude}&lon=${postData.longitude}&lang=pt_br&units=metric&appid=${key}`
-    console.log(url)
 
     await fetch(url) // faz um get na API
         .then(res => {
