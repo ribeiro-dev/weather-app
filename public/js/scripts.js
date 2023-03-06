@@ -1,4 +1,5 @@
 var x = document.getElementById("content");
+const iconElement = document.querySelector('#icon')
 const temperatureElement = document.querySelector('#temperature')
 const feelsLikeElement = document.querySelector('#feels-like')
 
@@ -25,11 +26,13 @@ function getLocation() {
       .then(json => {
         apiData = json
         
+        let icon = json.weather[0].icon
         let temperature = json.main.temp
         let feelsLike = json.main.feels_like
 
-        temperatureElement.textContent = parseInt(temperature) + "º"
-        feelsLikeElement.textContent = `Sensação térmica de ${parseInt(feelsLike)}º`
+        iconElement.src = `http://openweathermap.org/img/wn/${icon}@4x.png`
+        temperatureElement.innerHTML = `${parseInt(temperature)}<sup>\u00B0</sup>`
+        feelsLikeElement.innerHTML = `Sensação térmica: ${parseInt(feelsLike)}<sup>\u00B0</sup>`
       })
     });
   } else {
